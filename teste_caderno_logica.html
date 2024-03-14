@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+<script>
+
+	function pulalinha() { //o "correto" seria pulaLinha, com "L" maiúsculo
+ 
+		document.write("<br>");
+
+	}
+
+	function mostra(frase) {
+
+
+		document.write(frase);
+		pulalinha();
+		pulalinha();
+
+	}
+
+
+	var contador = 1
+	var numeroFamiliares = parseInt(prompt("Quantos Familiares?"));
+	var totalFamiliares= 0 
+
+	while(contador<=numeroFamiliares){
+		var nome= prompt("Qual o nome do familiar?");
+		var idadeFamiliar= parseInt(prompt("Insira a idade de " + nome));
+		mostra ("A idade de " + nome + " é " + idadeFamiliar);
+		totalFamiliares=totalFamiliares+idadeFamiliar
+		contador=contador+1
+
+		}
+var mediaFamiliar=(totalFamiliares/numeroFamiliares);
+mostra("A média de idade é " + mediaFamiliar);
+
+
+
+
+</script>

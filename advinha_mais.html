@@ -1,0 +1,92 @@
+<meta charset="UTF-8">
+
+
+Qual o segredo ?
+<input/>
+<button>Confirmar</button>
+
+<script>
+	//var q = parseInt(prompt("Informe quantos números"))
+
+	function sorteia(){
+
+		return Math.round(Math.random()*10);
+
+	}
+
+	function sN(q) {
+
+		var segredos = [];
+		var num = 1;
+
+		while(num<=q) {
+
+			var numAle = sorteia();
+			var achou = false;
+
+			if(numAle !== 0){
+
+				for(var posicao = 0; posicao < segredos.length; posicao++){
+
+					if(segredos[posicao] == numAle){
+						achou = true;
+						break;
+
+					}
+
+				}
+
+				if (achou==false) {
+
+					segredos.push(numAle);
+					num++
+
+				}
+
+
+			}
+
+		}	
+
+		return segredos
+
+	}
+	
+
+	var segredos = sN(5);
+
+	var x = document.querySelector("input");
+	x.focus();
+
+
+
+	function verifica(){
+
+		var achou = false;
+		for(var p=0; p < segredos.length; p++){	
+
+			if(x.value == segredos[p]) {
+
+				alert("Você ACERTOU !");
+				achou = true;
+				break;
+			}
+		}	
+		
+		if(achou == false){
+
+		alert("Você ERROU !!!!!!");
+		
+		}
+
+			x.value="";
+			x.focus();
+	}				
+
+	
+
+	var button = document.querySelector("button");
+
+	button.onclick = verifica;
+
+</script>
